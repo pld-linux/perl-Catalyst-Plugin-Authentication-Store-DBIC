@@ -9,7 +9,7 @@ Summary:	Authentication and authorization against a DBIx::Class or Class::DBI mo
 Summary(pl.UTF-8):	Uwierzytelnianie i autoryzacja względem modelu DBIx::Class lub Class::DBI
 Name:		perl-Catalyst-Plugin-Authentication-Store-DBIC
 Version:	0.11
-Release:	2
+Release:	3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -20,6 +20,7 @@ BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-Catalyst >= 5.49
+BuildRequires:	perl-Catalyst-Model-DBIC-Schema
 BuildRequires:	perl-Catalyst-Plugin-Authentication >= 0.06
 BuildRequires:	perl-DBI
 BuildRequires:	perl-Set-Object >= 1.14
