@@ -8,13 +8,13 @@
 Summary:	Authentication and authorization against a DBIx::Class or Class::DBI model
 Summary(pl.UTF-8):	Uwierzytelnianie i autoryzacja względem modelu DBIx::Class lub Class::DBI
 Name:		perl-Catalyst-Plugin-Authentication-Store-DBIC
-Version:	0.07
+Version:	0.11
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/D/DK/DKAMHOLZ/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	796f4b369f3717fc289126f6758a7ba9
+Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	7743beb2c7bca430f906b6c04899eade
 URL:		http://search.cpan.org/dist/Catalyst-Plugin-Authentication-Store-DBIC/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -39,17 +39,17 @@ uwierzytelniania użytkownika.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Build.PL \
-	destdir=$RPM_BUILD_ROOT \
-	installdirs=vendor
-./Build
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
+%{__make}
 
-%{?with_tests:./Build test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-./Build install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
