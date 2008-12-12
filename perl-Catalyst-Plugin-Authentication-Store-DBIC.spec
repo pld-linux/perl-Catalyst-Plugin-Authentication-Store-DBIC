@@ -5,11 +5,11 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Catalyst
 %define	pnam	Plugin-Authentication-Store-DBIC
-Summary:	Authentication and authorization against a DBIx::Class or Class::DBI model
-Summary(pl.UTF-8):	Uwierzytelnianie i autoryzacja względem modelu DBIx::Class lub Class::DBI
+Summary:	**DEPRECATED** Authentication and authorization against a DBIx::Class or Class::DBI model
+Summary(pl.UTF-8):	**PRZESTARZAŁY** Uwierzytelnianie i autoryzacja względem modelu DBIx::Class lub Class::DBI
 Name:		perl-Catalyst-Plugin-Authentication-Store-DBIC
 Version:	0.11
-Release:	3
+Release:	4
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -29,10 +29,16 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+This store has been deprecated in favour of
+Catalyst::Authentication::Store::DBIx::Class.
+
 This plugin uses a DBIx::Class (or Class::DBI) object to authenticate
 a user.
 
 %description -l pl.UTF-8
+Ten moduł jest przestarzały; używaj
+Catalyst::Authentication::Store::DBIx::Class. 
+
 Ta wtyczka wykorzystuje obiekt DBIx::Class (lub Class:DBI) do
 uwierzytelniania użytkownika.
 
