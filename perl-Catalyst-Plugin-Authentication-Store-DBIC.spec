@@ -9,7 +9,7 @@ Summary:	Authentication and authorization against a DBIx::Class or Class::DBI mo
 Summary(pl.UTF-8):	Uwierzytelnianie i autoryzacja względem modelu DBIx::Class lub Class::DBI
 Name:		perl-Catalyst-Plugin-Authentication-Store-DBIC
 Version:	0.11
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -39,7 +39,7 @@ uwierzytelniania użytkownika.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL \
+%{__perl} Makefile.PL --skipdeps \
 	INSTALLDIRS=vendor
 %{__make}
 
